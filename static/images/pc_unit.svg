@@ -1,0 +1,42 @@
+<svg width="60" height="90" viewBox="0 0 60 90" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+            <feOffset dx="1" dy="2" result="offsetblur"/>
+            <feComponentTransfer>
+                <feFuncA type="linear" slope="0.3"/>
+            </feComponentTransfer>
+            <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Table Surface (Wood) -->
+    <rect x="0" y="0" width="60" height="40" rx="3" fill="#d35400" stroke="#a04000" stroke-width="1" filter="url(#shadow)"/>
+    <rect x="2" y="2" width="56" height="36" rx="2" fill="#e67e22" opacity="0.8"/>
+
+    <!-- Keyboard (Black) -->
+    <rect x="15" y="10" width="30" height="10" rx="2" fill="#2c3e50" filter="url(#shadow)"/>
+    <!-- Keys -->
+    <rect x="17" y="12" width="26" height="6" fill="#7f8c8d" opacity="0.3"/>
+
+    <!-- Mouse (Black) -->
+    <ellipse cx="52" cy="15" rx="4" ry="6" fill="#2c3e50" filter="url(#shadow)"/>
+
+    <!-- Monitor (Top View - Black Base + Blue Screen edge) -->
+    <rect x="10" y="-5" width="40" height="5" rx="1" fill="#17202a" stroke="#34495e" stroke-width="1"/>
+    <!-- Screen Glow reflection -->
+    <line x1="12" y1="-8" x2="48" y2="-8" stroke="#3498db" stroke-width="2" opacity="0.5"/>
+
+    <!-- Chair (Blue Ergonomic) -->
+    <!-- Seat -->
+    <rect x="10" y="45" width="40" height="35" rx="8" fill="#3498db" stroke="#2980b9" stroke-width="2" filter="url(#shadow)"/>
+    <!-- Armrests -->
+    <rect x="5" y="50" width="5" height="25" rx="2" fill="#2c3e50"/>
+    <rect x="50" y="50" width="5" height="25" rx="2" fill="#2c3e50"/>
+    <!-- Backrest (Curved Top) -->
+    <path d="M10 80 Q30 90 50 80 L50 75 L10 75 Z" fill="#2980b9"/>
+    
+</svg>

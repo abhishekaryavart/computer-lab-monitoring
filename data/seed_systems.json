@@ -1,0 +1,38 @@
+[
+    {
+        "lab_id": "MCA_LAB",
+        "table": "L5",
+        "pc_name": "L501",
+        "position": 1,
+        "config": "Ryzen 7, 32GB",
+        "user": "Available",
+        "status": "OFF"
+    },
+    {
+        "lab_id": "MCA_LAB",
+        "table": "L5",
+        "pc_name": "L502",
+        "position": 2,
+        "config": "Ryzen 7, 32GB",
+        "user": "Student",
+        "status": "ON"
+    },
+    {
+        "lab_id": "MCA_LAB",
+        "table": "L3",
+        "pc_name": "L301",
+        "position": 1,
+        "config": "i5, 8GB",
+        "user": "Student",
+        "status": "ON"
+    },
+    {
+        "lab_id": "BCA_LAB",
+        "table": "L1",
+        "pc_name": "B101",
+        "position": 1,
+        "config": "i3, 8GB",
+        "user": "Available",
+        "status": "OFF"
+    }
+]

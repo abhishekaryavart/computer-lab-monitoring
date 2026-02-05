@@ -1,0 +1,38 @@
+<svg width="600" height="150" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 150">
+  <defs>
+    <filter id="glowText" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feFlood flood-color="#00d2d3" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="coloredBlur"/>
+      <feComposite in="coloredBlur" in2="SourceGraphic" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Panel Container -->
+  <rect x="10" y="10" width="580" height="130" rx="15" fill="#ffffff" stroke="#e1e8ed" stroke-width="1"/>
+  
+  <!-- Stat 1: Total -->
+  <g transform="translate(50, 40)">
+      <text x="30" y="0" font-family="Arial" font-size="12" fill="#7f8c8d" font-weight="bold">TOTAL SYSTEMS</text>
+      <text x="30" y="50" font-family="Courier New" font-size="40" fill="#2c3e50" font-weight="bold" filter="url(#glowText)">50</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="200" y1="30" x2="200" y2="110" stroke="#ecf0f1" stroke-width="2"/>
+
+  <!-- Stat 2: Active -->
+  <g transform="translate(250, 40)">
+      <text x="30" y="0" font-family="Arial" font-size="12" fill="#7f8c8d" font-weight="bold">RUNNING</text>
+      <text x="30" y="50" font-family="Courier New" font-size="40" fill="#27ae60" font-weight="bold" filter="url(#glowText)">18</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="400" y1="30" x2="400" y2="110" stroke="#ecf0f1" stroke-width="2"/>
+
+  <!-- Stat 3: Alert -->
+  <g transform="translate(450, 40)">
+      <text x="30" y="0" font-family="Arial" font-size="12" fill="#7f8c8d" font-weight="bold">ALERTS</text>
+      <text x="30" y="50" font-family="Courier New" font-size="40" fill="#e74c3c" font-weight="bold" filter="url(#glowText)">02</text>
+  </g>
+
+</svg>

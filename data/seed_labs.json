@@ -1,0 +1,17 @@
+[
+    {
+        "_id": "MCA_LAB",
+        "name": "MCA Lab",
+        "department": "Computer Science"
+    },
+    {
+        "_id": "BCA_LAB",
+        "name": "BCA Lab",
+        "department": "Computer Science"
+    },
+    {
+        "_id": "BIT_LAB",
+        "name": "BIT Lab",
+        "department": "Computer Science"
+    }
+]

@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+
+{% block title %}Staff Dashboard | Antigravity{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+
+    <!-- SIDEBAR -->
+    <div class="dash-sidebar">
+        <div class="user-profile">
+            <div class="avatar-circle">{{ staff_name[0] }}</div>
+            <div class="user-info">
+                <span class="welcome-text">Welcome back,</span>
+                <span class="user-name">{{ staff_name }}</span>
+            </div>
+        </div>
+
+        <div class="nav-menu">
+            <a href="{{ url_for('admin.dashboard') }}" class="active">Overview</a>
+            <a href="{{ url_for('home') }}">View Labs</a>
+            <a href="#">System Logs</a> <!-- Placeholder -->
+            <a href="{{ url_for('logout') }}" class="logout-link">Logout</a>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="dash-main">
+
+        <!-- HEADER -->
+        <div class="dash-header">
+            <h2>System Overview</h2>
+            <div class="date-display" style="color:#7f8c8d; font-size:0.9em;">Live Monitoring Active</div>
+        </div>
+
+        <!-- STATS GRID -->
+        <div class="dash-grid">
+            <div class="stat-card blue-glow">
+                <h3>Total Systems</h3>
+                <div class="number">{{ total }}</div>
+            </div>
+            <div class="stat-card green-glow">
+                <h3>Active Users</h3>
+                <div class="number">{{ active }}</div>
+            </div>
+            <div class="stat-card red-glow">
+                <h3>Maintenance</h3>
+                <div class="number">{{ issues }}</div>
+            </div>
+        </div>
+
+        <!-- MANAGEMENT PANELS -->
+        <div class="dash-header">
+            <h2>Management Console</h2>
+        </div>
+
+        <div class="mgmt-grid">
+
+            <!-- ADD SYSTEM -->
+            <div class="mgmt-card blue-border">
+                <h3>Add System</h3>
+                <form action="{{ url_for('admin.add_system') }}" method="POST">
+                    <div class="form-group small">
+                        <label>Target Lab</label>
+                        <select name="lab_id" required>
+                            {% for lab in labs %}
+                            <option value="{{ lab._id }}">{{ lab.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group small">
+                        <label>Table Group</label>
+                        <select name="table" required>
+                            <option value="L1">L1 (Right Facing)</option>
+                            <option value="L2">L2 (Left Facing)</option>
+                            <option value="L3">L3 (Right Facing)</option>
+                            <option value="L4">L4 (Left Facing)</option>
+                            <option value="L5">L5 (Left Facing)</option>
+                            <option value="B1">BCA-1</option>
+                            <option value="B2">BCA-2</option>
+                            <option value="T1">BIT-1</option>
+                        </select>
+                    </div>
+                    <div class="form-group small">
+                        <label>PC Name (e.g. L105)</label>
+                        <input type="text" name="pc_name" placeholder="System ID" required>
+                    </div>
+                    <div class="form-group small">
+                        <label>Configuration</label>
+                        <input type="text" name="config" placeholder="Specs (e.g. i5, 8GB)" required>
+                    </div>
+                    <button type="submit" class="mgmt-btn blue-btn">Add System</button>
+                </form>
+            </div>
+
+            <!-- ALLOCATE SYSTEM -->
+            <div class="mgmt-card green-border">
+                <h3>Allocate System</h3>
+                <form action="{{ url_for('admin.allocate_system') }}" method="POST">
+                    <div class="form-group small">
+                        <label>Lab</label>
+                        <select name="lab_id" required>
+                            {% for lab in labs %}
+                            <option value="{{ lab._id }}">{{ lab.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group small">
+                        <label>PC Name</label>
+                        <input type="text" name="pc_name" placeholder="Target System (e.g. L101)" required>
+                    </div>
+                    <div class="form-group small">
+                        <label>Student Name</label>
+                        <input type="text" name="user_name" placeholder="Assigned User" required>
+                    </div>
+                    <div class="form-group small">
+                        <label>Activity</label>
+                        <select name="activity">
+                            <option value="Class">Regular Class</option>
+                            <option value="Project">Project Work</option>
+                            <option value="Research">Research</option>
+                            <option value="Exam">Examination</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="mgmt-btn green-btn">Allocate User</button>
+                </form>
+            </div>
+
+            <!-- REMOVE SYSTEM -->
+            <div class="mgmt-card red-border">
+                <h3>Remove System</h3>
+                <form action="{{ url_for('admin.remove_system') }}" method="POST"
+                    onsubmit="return confirm('Are you sure you want to delete this system permanently?');">
+                    <div class="form-group small">
+                        <label>Lab</label>
+                        <select name="lab_id" required>
+                            {% for lab in labs %}
+                            <option value="{{ lab._id }}">{{ lab.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group small">
+                        <label>PC Name</label>
+                        <input type="text" name="pc_name" placeholder="System to Delete" required>
+                    </div>
+
+                    <div style="margin-top: 45px;">
+                        <p style="font-size:0.8em; color:#e74c3c; margin-bottom:10px;">Warning: This action cannot be
+                            undone.</p>
+                        <button type="submit" class="mgmt-btn red-btn">Remove System</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}

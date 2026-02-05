@@ -1,0 +1,119 @@
+<svg width="800" height="400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-color="#00bfff" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="coloredBlur"/>
+      <feComposite in="coloredBlur" in2="SourceGraphic" operator="over"/>
+    </filter>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f8f9fa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background (Transparent/Light) -->
+  <rect width="800" height="400" fill="#f0f2f5"/>
+
+  <!-- Card 1: MCA Lab -->
+  <g transform="translate(30, 80)">
+    <!-- Shadow/Glow -->
+    <rect x="10" y="20" width="220" height="260" rx="15" fill="#00bfff" opacity="0.3" filter="url(#glowBlue)"/>
+    <!-- Card Body -->
+    <rect x="0" y="0" width="220" height="280" rx="15" fill="url(#cardGrad)" stroke="#e1e4e8"/>
+    
+    <!-- Title -->
+    <text x="110" y="40" font-family="Arial" font-size="20" font-weight="bold" fill="#2c3e50" text-anchor="middle">MCA Lab</text>
+    <line x1="20" y1="55" x2="200" y2="55" stroke="#f0f0f0" stroke-width="2"/>
+    
+    <!-- Metrics -->
+    <g transform="translate(20, 80)">
+      <text x="0" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Total Systems</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="end">60</text>
+    </g>
+    <g transform="translate(20, 120)">
+      <circle cx="5" cy="-5" r="4" fill="#27ae60" filter="url(#glowBlue)"/>
+      <text x="20" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Running</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#27ae60" font-weight="bold" text-anchor="end">45</text>
+    </g>
+    <g transform="translate(20, 160)">
+      <circle cx="5" cy="-5" r="4" fill="#2980b9" filter="url(#glowBlue)"/>
+      <text x="20" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Available</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="end">10</text>
+    </g>
+    <g transform="translate(20, 200)">
+      <circle cx="5" cy="-5" r="4" fill="#e74c3c" filter="url(#glowBlue)"/>
+      <text x="20" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Dead</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#e74c3c" font-weight="bold" text-anchor="end">5</text>
+    </g>
+    
+    <!-- Action Button -->
+    <rect x="35" y="235" width="150" height="30" rx="5" fill="#3498db"/>
+    <text x="110" y="255" font-family="Arial" font-size="12" fill="white" text-anchor="middle">View Details</text>
+  </g>
+
+
+  <!-- Card 2: BCA Lab -->
+  <g transform="translate(290, 60)"> <!-- Floating slightly higher -->
+    <rect x="10" y="20" width="220" height="260" rx="15" fill="#00bfff" opacity="0.3" filter="url(#glowBlue)"/>
+    <rect x="0" y="0" width="220" height="280" rx="15" fill="url(#cardGrad)" stroke="#e1e4e8"/>
+    
+    <text x="110" y="40" font-family="Arial" font-size="20" font-weight="bold" fill="#2c3e50" text-anchor="middle">BCA Lab</text>
+    <line x1="20" y1="55" x2="200" y2="55" stroke="#f0f0f0" stroke-width="2"/>
+    
+    <g transform="translate(20, 80)">
+      <text x="0" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Total Systems</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="end">40</text>
+    </g>
+    <g transform="translate(20, 120)">
+      <circle cx="5" cy="-5" r="4" fill="#27ae60" filter="url(#glowBlue)"/>
+      <text x="20" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Running</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#27ae60" font-weight="bold" text-anchor="end">35</text>
+    </g>
+    <g transform="translate(20, 160)">
+      <circle cx="5" cy="-5" r="4" fill="#2980b9" filter="url(#glowBlue)"/>
+      <text x="20" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Available</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="end">3</text>
+    </g>
+    <g transform="translate(20, 200)">
+      <circle cx="5" cy="-5" r="4" fill="#e74c3c" filter="url(#glowBlue)"/>
+      <text x="20" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Dead</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#e74c3c" font-weight="bold" text-anchor="end">2</text>
+    </g>
+    <rect x="35" y="235" width="150" height="30" rx="5" fill="#3498db"/>
+    <text x="110" y="255" font-family="Arial" font-size="12" fill="white" text-anchor="middle">View Details</text>
+  </g>
+
+
+  <!-- Card 3: BIT Lab -->
+  <g transform="translate(550, 80)">
+    <rect x="10" y="20" width="220" height="260" rx="15" fill="#00bfff" opacity="0.3" filter="url(#glowBlue)"/>
+    <rect x="0" y="0" width="220" height="280" rx="15" fill="url(#cardGrad)" stroke="#e1e4e8"/>
+    
+    <text x="110" y="40" font-family="Arial" font-size="20" font-weight="bold" fill="#2c3e50" text-anchor="middle">BIT Lab</text>
+    <line x1="20" y1="55" x2="200" y2="55" stroke="#f0f0f0" stroke-width="2"/>
+    
+    <g transform="translate(20, 80)">
+      <text x="0" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Total Systems</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#2c3e50" font-weight="bold" text-anchor="end">30</text>
+    </g>
+    <g transform="translate(20, 120)">
+      <circle cx="5" cy="-5" r="4" fill="#27ae60" filter="url(#glowBlue)"/>
+      <text x="20" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Running</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#27ae60" font-weight="bold" text-anchor="end">20</text>
+    </g>
+    <g transform="translate(20, 160)">
+      <circle cx="5" cy="-5" r="4" fill="#2980b9" filter="url(#glowBlue)"/>
+      <text x="20" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Available</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#2980b9" font-weight="bold" text-anchor="end">8</text>
+    </g>
+    <g transform="translate(20, 200)">
+      <circle cx="5" cy="-5" r="4" fill="#e74c3c" filter="url(#glowBlue)"/>
+      <text x="20" y="0" font-family="Arial" font-size="14" fill="#7f8c8d">Dead</text>
+      <text x="180" y="0" font-family="Arial" font-size="14" fill="#e74c3c" font-weight="bold" text-anchor="end">2</text>
+    </g>
+    <rect x="35" y="235" width="150" height="30" rx="5" fill="#3498db"/>
+    <text x="110" y="255" font-family="Arial" font-size="12" fill="white" text-anchor="middle">View Details</text>
+  </g>
+
+</svg>

@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}{{ lab_name }} | Lab Monitoring{% endblock %}
+
+{% block content %}
+
+<div class="lab">
+
+    <!-- LAB HEADER -->
+    <div class="lab-header">
+        <div class="title">{{ lab_name }}</div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <span class="label">Total Systems</span>
+                <span class="value">{{ stats.total }}</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Running</span>
+                <span class="value">{{ stats.running }}</span>
+            </div>
+            <div class="stat-box">
+                <span class="label">Blank Space</span>
+                <span class="value">{{ stats.blank }}</span>
+            </div>
+            <div class="stat-box alert">
+                <span class="label">Dead System</span>
+                <span class="value">{{ stats.dead }}</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- FRONT WALL -->
+    <div class="front-wall"
+        style="display: flex; justify-content: space-between; align-items: center; padding: 20px 50px;">
+
+        <!-- Left: Empty or Projector (Moved Projector here?) 
+             User asked "allocate like l1 side" which implies alignment. 
+             If L1 is right, then "Right" is correct.
+             "lab status text show in center box under"
+        -->
+
+        <!-- LEFT: Empty for balance or Projector Screen? -->
+        <div style="flex: 1;"></div>
+
+        <!-- CENTER: Lab Status -->
+        <div class="status-center-box" style="flex: 2; display: flex; justify-content: center;">
+            <div class="screen-board" style="width: 100%; max-width: 400px; text-align: center;">
+                Lab Status: {{ lab_name }} Monitoring
+            </div>
+        </div>
+
+        <!-- RIGHT: Teacher & Station -->
+        <div class="right-controls" style="flex: 1; display:flex; gap:20px; justify-content: flex-end;">
+            <div class="teacher-desk">
+                <div class="desk-label">Teacher</div>
+                <img src="{{ url_for('static', filename='images/teacher_desk.svg') }}">
+            </div>
+
+            <div class="network-panel">
+                <div class="net-item">
+                    <img src="{{ url_for('static', filename='images/antigravity_station.svg') }}"> Station
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LAB AREA -->
+    <div class="lab-area">
+
+        {% for table in tables %}
+        <div class="dual-table {{ table.type }}">
+
+            {% for side in table.sides %}
+            <div class="side">
+                <div class="table-label">{{ side.name }}</div>
+
+                {% for pos in range(1, side.capacity + 1) %}
+                {% set pc = side.systems | selectattr("position", "equalto", pos) | first %}
+
+                {% if pc %}
+                <div class="seat">
+                    <img src="{{ url_for('static', filename='images/pc_unit.svg') }}" class="pc {{ pc.status|lower }}"
+                        onclick="pcOff(this)" ondblclick="pcOn(this)">
+
+                    <span class="status">{{ pc.status }}</span>
+                    <span class="pc-name">{{ pc.pc_name }}</span>
+
+                    <div class="details">
+                        <p><strong>Name:</strong> {{ pc.pc_name }}</p>
+                        <p><strong>Config:</strong> {{ pc.config }}</p>
+                        <p><strong>User:</strong> {{ pc.user }}</p>
+                    </div>
+                </div>
+                {% else %}
+                <div class="seat empty"></div>
+                {% endif %}
+                {% endfor %}
+            </div>
+            {% endfor %}
+
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,66 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#00bfff" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="coloredBlur"/>
+      <feComposite in="coloredBlur" in2="SourceGraphic" operator="over"/>
+    </filter>
+    <linearGradient id="tableWood" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a0522d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b4513;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="600" fill="#f4f4f4"/>
+
+  <!-- Antigravity Glow Shadow -->
+  <ellipse cx="400" cy="450" rx="300" ry="30" fill="#000" opacity="0.15" filter="url(#glowBlue)"/>
+
+  <!-- Floating Lab Table (Side View/Perspective) -->
+  <g transform="translate(100, 250)">
+     <!-- Table Top -->
+     <path d="M0,50 L50,0 L550,0 L600,50 L600,70 L0,70 Z" fill="url(#tableWood)" stroke="#5c4033" stroke-width="2"/>
+     <!-- Floating Base Glow -->
+     <rect x="50" y="80" width="500" height="15" fill="#00bfff" opacity="0.4" filter="url(#glowBlue)"/>
+  </g>
+
+  <!-- L1 Systems (Back Row/Left Side - Facing Away/Left) -->
+  <g transform="translate(150, 210)">
+    <rect x="0" y="0" width="60" height="40" fill="#333" stroke="#111"/> <!-- Monitor Back -->
+    <rect x="20" y="40" width="20" height="10" fill="#555"/> <!-- Stand -->
+    <text x="10" y="25" fill="#555" font-family="Arial" font-size="10">L1-01</text>
+  </g>
+  <g transform="translate(350, 210)">
+    <rect x="0" y="0" width="60" height="40" fill="#333" stroke="#111"/>
+    <rect x="20" y="40" width="20" height="10" fill="#555"/>
+    <text x="10" y="25" fill="#555" font-family="Arial" font-size="10">L1-02</text>
+  </g>
+
+  <!-- L2 Systems (Front Row/Right Side - Facing User/Right) -->
+  <g transform="translate(200, 260)">
+    <rect x="0" y="0" width="70" height="50" fill="#222" stroke="#444"/> <!-- Monitor Screen -->
+    <rect x="5" y="5" width="60" height="40" fill="#1a1a1a"/>
+    <rect x="25" y="50" width="20" height="10" fill="#333"/> <!-- Stand -->
+    <text x="15" y="30" fill="#00bfff" font-family="Arial" font-size="10">L2-01</text>
+  </g>
+  <g transform="translate(400, 260)">
+    <rect x="0" y="0" width="70" height="50" fill="#222" stroke="#444"/>
+    <rect x="5" y="5" width="60" height="40" fill="#1a1a1a"/>
+    <rect x="25" y="50" width="20" height="10" fill="#333"/>
+    <text x="15" y="30" fill="#00bfff" font-family="Arial" font-size="10">L2-02</text>
+  </g>
+
+  <!-- Floating Chairs (Front) -->
+  <g transform="translate(210, 330)">
+    <path d="M0,0 Q15,0 30,0 L30,40 Q15,40 0,40 Z" fill="#2c3e50" stroke="#34495e"/> <!-- Back -->
+    <rect x="0" y="40" width="30" height="5" fill="#2c3e50"/> <!-- Seat -->
+    <ellipse cx="15" cy="55" rx="10" ry="2" fill="#00bfff" opacity="0.6" filter="url(#glowBlue)"/>
+  </g>
+  <g transform="translate(410, 330)">
+     <path d="M0,0 Q15,0 30,0 L30,40 Q15,40 0,40 Z" fill="#2c3e50" stroke="#34495e"/>
+    <rect x="0" y="40" width="30" height="5" fill="#2c3e50"/>
+    <ellipse cx="15" cy="55" rx="10" ry="2" fill="#00bfff" opacity="0.6" filter="url(#glowBlue)"/>
+  </g>
+
+</svg>

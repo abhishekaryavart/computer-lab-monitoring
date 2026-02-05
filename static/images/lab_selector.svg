@@ -1,0 +1,30 @@
+<svg width="300" height="150" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150">
+  <defs>
+    <filter id="glowSelector" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#00d2d3" result="color"/>
+      <feComposite in="color" in2="blur" operator="in" result="coloredBlur"/>
+      <feComposite in="coloredBlur" in2="SourceGraphic" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Panel Container -->
+  <g transform="translate(10, 10)">
+      <!-- Label -->
+      <text x="10" y="25" font-family="Arial" font-size="12" font-weight="bold" fill="#7f8c8d">SELECT LAB FACILITY</text>
+      
+      <!-- Dropdown Box -->
+      <g transform="translate(0, 40)" filter="url(#glowSelector)">
+        <rect x="0" y="0" width="280" height="50" rx="8" fill="#1e272e" stroke="#353b48" stroke-width="1"/>
+        
+        <!-- Selected Text -->
+        <text x="15" y="32" font-family="Arial" font-size="16" fill="#ecf0f1">MCA Lab (Level 1)</text>
+        
+        <!-- Arrow -->
+        <path d="M250 20 L260 30 L270 20" fill="none" stroke="#00d2d3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+      
+      <!-- Dropdown Menu (Simulated Open State being faded/below) -->
+      <!-- Just the selector box is usually visible, but hinting at depth -->
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Computer Lab Monitoring System{% endblock %}</title>
+
+    <!-- Main Lab CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/lab.css') }}?v=2">
+
+    <!-- Optional: Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOP NAVBAR -->
+    <header class="top-bar">
+        <div class="logo">
+            🖥️ Computer Lab Monitoring
+        </div>
+
+        <nav class="nav-links">
+            <a href="{{ url_for('home') }}">🏠 Home</a>
+            <a href="{{ url_for('home') }}#labs">🖥️ View Labs</a>
+            <a href="/login" class="staff-btn">🔑 Staff Login</a>
+        </nav>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <main class="main-content">
+        {% block content %}
+        <!-- Page specific content goes here -->
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© {{ 2026 }} Computer Science Department</p>
+    </footer>
+
+    <!-- Global JS -->
+    <script src="{{ url_for('static', filename='js/lab.js') }}"></script>
+
+</body>
+
+</html>

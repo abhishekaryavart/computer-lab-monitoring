@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HOME DASHBOARD HERO -->
+<div class="dashboard-hero-text">
+    <h1 class="main-title">Department of Computer Science</h1>
+    <h2 class="sub-title">Advanced Lab Monitoring System</h2>
+
+    <div class="system-status-indicator">
+        <span class="pulse-ring"></span>
+        <span class="status-text">LIVE MONITORING ACTIVE</span>
+    </div>
+</div>
+
+<div class="lab-container" id="labs" style="margin-top: 50px;">
+
+    {% for lab in labs %}
+    <div class="lab-card">
+        <h3>{{ lab.name }}</h3>
+
+        <div class="stats">
+            <p><strong>Total:</strong> {{ lab.total }}</p>
+            <p><strong>Running:</strong> <span class="run">{{ lab.running }}</span></p>
+            <p><strong>Available:</strong> <span class="off">{{ lab.available }}</span></p>
+            <p><strong>Dead:</strong> <span class="dead">{{ lab.dead }}</span></p>
+        </div>
+
+        <a href="/lab/{{ lab.lab_id }}" class="btn">View Lab</a>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
