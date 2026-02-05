@@ -17,7 +17,6 @@
 
 
 
-
 from pymongo import MongoClient
 import os
 
@@ -29,5 +28,7 @@ if not MONGO_URI:
 client = MongoClient(MONGO_URI)
 db = client["lab_monitoring_db"]
 
+# Collections
 labs_col = db["labs"]
 systems_col = db["systems"]
+staff_col = db["staff"]   # ✅ ADD THIS LINE
